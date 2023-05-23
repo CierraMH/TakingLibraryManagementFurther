@@ -1,25 +1,32 @@
 package Assignment;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.time.LocalDate;
 
 public class Book {
     private String title;
     private String author;
-    private int releaseYear;
+    private int publicationYear;
     private int pages;
+    private String category;
+    private boolean isOnLoan;
+    private LocalDate dueDate;
 
-    public Book(String title, String author, int releaseYear, int pages) {
+    public Book(String title, String author, int publicationYear, int pages) {
         this.title = title;
         this.author = author;
-        this.releaseYear = releaseYear;
+        this.publicationYear = publicationYear;
         this.pages = pages;
     }
+    public Book(String title, String author, int publicationYear, int pages, String category) {
+        this.title = title;
+        this.author = author;
+        this.publicationYear = publicationYear;
+        this.pages = pages;
+        this.category = category;
+        this.isOnLoan = false;
 
-    // List<T> bookInfo = Arrays.asList(title, author, releaseYear, pages);
-    List<T> bookInfo = new ArrayList<>();
-    bookInfo.stream();
+        
+    }
  
     public String getTitle() {
         return title;
@@ -35,11 +42,11 @@ public class Book {
         this.author = author;
     }
 
-    public int getReleaseYear() {
-        return releaseYear;
+    public int getPublicationYear() {
+        return publicationYear;
     }
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
     }
 
     public int getPages() {
@@ -47,6 +54,31 @@ public class Book {
     }
     public void setPages(int pages) {
         this.pages = pages;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public boolean isOnLoan() {
+        return isOnLoan;
+    }
+    public void setIsOnLoan(boolean isOnLoan) {
+        this.isOnLoan = isOnLoan;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+    @Override
+    public String toString(){
+        return "Book Information: Title " + title + ", Author " + author + ", Publication year " + publicationYear + ", Number of pages " + pages + ". Is the Book in the Fiction or Non-Fiction category: " + category + ".\n";
     }
 
 }
